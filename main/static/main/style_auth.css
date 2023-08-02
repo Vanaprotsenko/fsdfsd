@@ -1,0 +1,55 @@
+*{
+    font-family: 'B612 Mono', monospace;
+    width: 1440px;
+    height: 2000px;
+}
+button, input {
+    outline: none;
+  }
+  a {
+    text-decoration: none;
+}
+.register{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.main_register{
+    display: flex;
+    background-color:rgba(179, 178, 255, 1);
+    width: 555px;
+    height: 695px;
+    border-radius: 35px;
+    justify-content: center;
+    bottom: 128px;
+    position: absolute;
+    top: 180px;
+}
+.register input {
+    margin-bottom: 10px; 
+    width: 286px;
+    height: 50px;
+    border-radius: 35px;
+    position: relative;
+    top: 120px;
+}
+.register button{
+    margin-bottom: 10px; 
+    width: 202px;
+    height: 45px;
+    position: relative;
+    top:155px;
+    font-size: 15px;
+    color:white;
+    background-color: rgba(70, 66, 255, 1);
+} 
+.register a {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    font-size:18px;
+    border-radius: 65px;
+    width: 160px;
+    height: 60px;
+    background-color: white;
+}

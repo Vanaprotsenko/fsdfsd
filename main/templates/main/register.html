@@ -1,0 +1,55 @@
+
+<html lang="en">
+    {% load static %}
+    
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'main/style_register.css' %}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=B612+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        {% block header_content %}
+        <h1>Lt.com</h1>
+        {% endblock %}
+    </header>
+    
+   <main>
+    <form action="" method="POST">
+        {% csrf_token %}
+        <div class="main_register">
+            <div class="register">
+                <a href="/" class="log">Log in</a>
+                <a href="auth/">Sign in</a>
+                <input type="text" name = "email" placeholder="enter the email">
+                {{error}}
+                <input type="number" name = "password" placeholder="enter the password">
+                {{error}}
+                <input type="number" name = "confirm_password" placeholder="enter the password">
+                <input type="text" name = "full_name" placeholder="enter the  full name">
+                <input type="number" name = "phone_number" placeholder="enter the phone number">
+                <button>Sign in</button>
+            </div>
+        </div>
+        <footer>
+            {% block footer_content %}
+                <p>Lt.com</p>
+            {% endblock %}
+
+        </footer>
+   
+        
+        
+            
+        
+
+    </form>
+   </main>
+   
+    
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+    {% load static %}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'main/style_auth.css' %}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=B612+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        {% block header_content %}
+        <h1>Lt.com</h1>
+        {% endblock %}
+    </header>
+    <main>
+        <form action="" method="POST">
+            {% csrf_token %}
+            <div class="main_register">
+                <div class="register">
+                    <a href="/" class="log">Log in</a>
+                    <a href="#">Sign in</a>
+                    {{errors}}
+                    {{good}}
+                    <input type="text" name = "email" placeholder="enter the email">
+                    <input type="number" name = "password" placeholder="enter the password">
+                    <button>Sign in</button>
+                </div>
+            </div>
+            
+            
+                
+            
+    
+        </form>
+       </main>
+    
+</body>
+</html>

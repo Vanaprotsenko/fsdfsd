@@ -1,0 +1,13 @@
+*{
+    font-family: 'B612 Mono', monospace;
+    width: 1440px;
+    height: 2000px;
+}
+header h1{
+    font-size: 35px;
+}
+footer p {
+    width: 1440px;
+    height: 330px;
+    background-color:rgba(179, 178, 255, 1);
+}
