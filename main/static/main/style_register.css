@@ -1,12 +1,12 @@
 *{
     font-family: 'B612 Mono', monospace;
     width: 1440px;
-    height: 2000px;
+    
 }
 button, input {
     outline: none;
-  }
-  a {
+}
+a {
     text-decoration: none;
 }
 .register{

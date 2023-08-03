@@ -1,3 +1,4 @@
+{% extends "main/base.html" %}
 
 <html lang="en">
     {% load static %}
@@ -12,12 +13,12 @@
 <link href="https://fonts.googleapis.com/css2?family=B612+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <header>
-        {% block header_content %}
+    {% block header_content %}
         <h1>Lt.com</h1>
-        {% endblock %}
-    </header>
+    {% endblock header_content %}
     
+
+    {% block content %} 
    <main>
     <form action="" method="POST">
         {% csrf_token %}
@@ -34,22 +35,17 @@
                 <input type="number" name = "phone_number" placeholder="enter the phone number">
                 <button>Sign in</button>
             </div>
-        </div>
-        <footer>
-            {% block footer_content %}
-                <p>Lt.com</p>
-            {% endblock %}
-
-        </footer>
-   
-        
-        
-            
-        
-
+        </div>         
     </form>
-   </main>
-   
+     </main>
+    
+
+        
+  
+   {% endblock content %}
+   {% block footer_content %}
+        <h1>Lt.com</h1>
+    {% endblock footer_content %}
     
 </body>
 </html>

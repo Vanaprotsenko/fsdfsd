@@ -1,13 +1,29 @@
 *{
     font-family: 'B612 Mono', monospace;
-    width: 1440px;
-    height: 2000px;
 }
+
+
+
+footer{
+    
+    width: 1440px;
+    height: 330px;
+    background-color: rgba(179, 178, 255, 1);
+    position: relative; 
+    top: 50px;
+    margin-top: 850px;
+}
+footer h1 {
+    font-size: 35px;
+    display: flex;
+    align-items: start;
+    padding: 120px;
+}
+footer p {
+    font-size: 20px;
+}
+
 header h1{
     font-size: 35px;
 }
-footer p {
-    width: 1440px;
-    height: 330px;
-    background-color:rgba(179, 178, 255, 1);
-}
+

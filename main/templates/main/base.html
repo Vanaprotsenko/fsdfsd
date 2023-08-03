@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="{% static 'main/style_register.css' %}">
     <link rel="stylesheet" href="{% static 'main/style_base.css' %}">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -12,23 +13,28 @@
 </head>
 <body>
     
-        <header>
-            {% block header_content %}
-                
-            {% endblock %}
-        </header>
+    <header>
+        {% block header_content %}
+                    
+        {% endblock header_content %}
+    </header>
+    
+    <main>
+        {% block content %}
+
+        {% endblock content %}
+
+    </main>
         
 
-        <footer>
-            <div class="footer">
-                        
-                {% block footer_content %}
+    <footer>  
+        {% block footer_content %}
                             
-                {% endblock %}
-
-                    
-            </div>
-        </footer>
+        {% endblock footer_content %}
+            
+    </footer>
+    
+    
                 
    
 
