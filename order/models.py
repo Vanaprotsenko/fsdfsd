@@ -9,6 +9,7 @@ class Bucket(models.Model):
 class ProductBucket(models.Model):
     count = models.IntegerField()
     product = models.ForeignKey(Product, on_delete=models.CASCADE)
+    bucket = models.ForeignKey(Bucket, on_delete=models.CASCADE, null=True, blank=True)
 
     # я немного не понял на счет бакета, мы изначально указали связь фор ин кей, но на какой класс он ориентируеться ? тут я немножко не понял
 

@@ -55,6 +55,12 @@ header {
     justify-content: center;
     padding:20px;
 }
+.image{
+    width: 100px;
+    height: 60px;
+
+}
+
 
 .button{
     display: flex;
@@ -76,17 +82,13 @@ header {
 }
 .name_order{
     display: flex;
-    flex-direction: row;
-    gap:150px;
-}
-.name_order a {
-    font-size: 28px;
+    flex-direction: column;
+    gap:30px;
 }
 
 
 .i {
     position: relative;
-    
 }
 .in{
     font:inherit;

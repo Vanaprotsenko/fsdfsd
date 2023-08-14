@@ -1,6 +1,7 @@
 *{
     font-family: 'B612 Mono', monospace;
 }
+
 a{
     text-decoration: none;
     color:black;
@@ -50,11 +51,17 @@ header {
     gap:45px;
     top:70px;
     background-color: rgba(179, 178, 255, 1);
-    width: 750px;
+    width: 650px;
     height: auto;
     justify-content: center;
     padding:20px;
 }
+.image{
+    width: 100px;
+    height: 60px;
+
+}
+
 
 .button{
     display: flex;
@@ -76,49 +83,22 @@ header {
 }
 .name_order{
     display: flex;
-    flex-direction: row;
-    gap:150px;
+    flex-direction: column;
+    justify-content: center;
+    gap:30px;
 }
-.name_order a {
-    font-size: 28px;
+.name_order h1 {
+    font-size: 24px;
 }
 
 
-.i {
-    position: relative;
-    
-}
-.in{
-    font:inherit;
-    color:#fff;
+
+
+.name_order button{
+    width: 155px;
+    height: 60px;
+    background-color: rgba(255, 97, 126, 1);
+    right:65px;
     padding: 10px;
-    border: none;
-    border-radius: 4px;
-    outline: 2px solid #fff;
-    background-color: transparent;
-    transition: outline-color 500ms;
-
+    font-size: 14px;
 }
-.in:is(:focus, :valid){
-    outline-color: #3c50eb;
-}
-.la{
-    position: absolute;
-    top:0px;
-    left:0px;
-    translate: 10px 10px;
-    color:#fff;
-    transition: translate 500ms,
-    scale 500ms;
-}
-.in:focus +
-.la,
-.in:valid +
-.la{
-    padding: inline 5px;
-    translate: 10px -14px;
-    scale:0.8;
-    background-color: #000;
-}
-
-

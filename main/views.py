@@ -23,14 +23,14 @@ def register(request):
         confirm_password = request.POST.get('confirm_password')
         if password == confirm_password:
             if User.objects.filter(username=username).exists():
-              messages.info(request,'username is already exist')
+              
               return redirect('/')
             else: 
                 user = User.objects.create(username=username, email=email,first_name = first_name,last_name=last_name,password=password)
                 user.set_password(password)
                 user.save()
                 
-                return redirect('auth/')
+                return redirect('/')
     else:
     
      return render(request, 'main/register.html')
@@ -42,6 +42,7 @@ def register(request):
 
 
 def auth(request):
+    context = {}
     if request.method == 'POST':
         username = request.POST.get('username')
         password = request.POST.get('password')
@@ -52,8 +53,8 @@ def auth(request):
             login(request, user)
             return redirect('/')
         else:
-            messages.info(request,'Invalid username or password')
-            return redirect('auth/')
+            
+            return render(request,'main/auth.html',context)
         
     else:
         return render(request,'main/auth.html')

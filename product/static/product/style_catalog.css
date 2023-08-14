@@ -1,0 +1,58 @@
+*{
+    padding: 0;
+    margin: 0;
+    font-family: 'Chivo Mono', monospace;
+    font-family: 'Roboto Condensed', sans-serif;
+}
+a{
+    text-decoration: none;
+    color:black;
+}
+
+header {
+    width: 697px;
+    display: flex;
+    flex-direction: row;
+    gap:40px;
+    font-size: 24px;
+    position: relative;
+    top: 0px;
+    left: 803px;
+    align-items: flex-end;
+   
+
+}
+main{
+    display: flex;
+    /* width: 100%;
+    background-color: black; */
+    align-items:flex-start;
+    justify-content: center;
+    padding-top: 100px;
+    gap:20px;
+    flex-wrap: wrap;
+    
+
+}
+.product{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: red;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    width: 250px;
+    border-radius: 25px;
+
+
+
+
+}
+main img {
+    width: 150px;
+    height: 100px;
+    background-color: black;
+}
+header p:hover{
+    color: red;
+}
