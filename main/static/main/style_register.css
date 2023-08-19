@@ -1,5 +1,7 @@
 *{
     font-family: 'B612 Mono', monospace;
+    margin: 0;
+    padding: 0;
 }
 a{
     text-decoration: none;
@@ -8,17 +10,30 @@ a{
 
 
 header {
-    width: 697px;
+    width: calc(100% - 40px);
     display: flex;
     flex-direction: row;
     gap:40px;
     font-size: 24px;
-    position: relative;
-    top: -60px;
-    left: 803px;
-    align-items: flex-end;
-   
-
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #cbe3ec77;
+    justify-content: space-between;
+    
+}
+header h1 {
+    font-size: 28px;
+}
+header div{
+    display: flex;
+    gap: 50px;
+}
+header div a{
+    border-bottom:  4px solid transparent;
+}
+header div a:hover{
+    border-bottom:  4px solid #4e64ac77;
+    box-sizing: content-box;
 }
 
 .first{
@@ -43,17 +58,14 @@ header {
 
 .main-container{
     display: flex;
-    position: relative;
     align-items: center;
     flex-direction: column;
-    right: -560px;
     gap:45px;
-    top:70px;
     background-color: rgba(179, 178, 255, 1);
-    width: 750px;
     height: auto;
     justify-content: center;
     padding:20px;
+    width: 50%;
 }
 
 .button{
@@ -83,10 +95,11 @@ header {
     font-size: 28px;
 }
 
-
-.i {
+.i{
     position: relative;
-    
+    width: 100%;
+    display: flex;
+    justify-content: center;
 }
 .in{
     font:inherit;
@@ -97,6 +110,7 @@ header {
     outline: 2px solid #fff;
     background-color: transparent;
     transition: outline-color 500ms;
+    width: 60%;
 
 }
 .in:is(:focus, :valid){
@@ -105,11 +119,12 @@ header {
 .la{
     position: absolute;
     top:0px;
-    left:0px;
+    left:20%;
     translate: 10px 10px;
     color:#fff;
     transition: translate 500ms,
     scale 500ms;
+    width: 200px;
 }
 .in:focus +
 .la,
@@ -122,3 +137,16 @@ header {
 }
 
 
+main{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+main form{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding-top: 100px;
+}

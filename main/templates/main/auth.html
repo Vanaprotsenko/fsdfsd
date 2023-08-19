@@ -5,27 +5,23 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="{% static 'main/style_auth.css' %}">
+    <link rel="stylesheet" href="{% static 'main/style_register.css' %}">
     <link href="https://fonts.googleapis.com/css2?family=B612+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
 </head>
-    {% block header_content %}
-        <h1>Lt.com</h1>
-    {% endblock header_content %}
     
-   
 
 <body>
-    <form action="" method="POST">
-        <header>
+    <header>
+        <h1>Lt.com</h1>
+        <div>
             <a href="#">Iphone</a>
             <a href="#">Mac</a>
             <a href="#">IPad</a>
             <a href="#">Air Pods</a>
             <a href="#">Apple Watch</a>
-           
-        </header>
-
-    </form>
+        </div>
+    </header>
+<main>
     <form action="" method="POST" name="form_for_order">
       {% csrf_token %}
         <div class="main-container">
@@ -62,5 +58,6 @@
         </div>
        
     </form>
+</main>
 </body>
 </html>
