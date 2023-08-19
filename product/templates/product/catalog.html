@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+    {% load static %}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'product/style_catalog.css' %}">
+    <link href="https://fonts.googleapis.com/css2?family=B612+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+</head>
+    {% block header_content %}
+        <h1>Lt.com</h1>
+    {% endblock header_content %}
+
+    <body>
+        <form action="" method="POST">
+            <header>
+                <a href="#">Iphone</a>
+                <a href="#">Mac</a>
+                <a href="#">IPad</a>
+                <a href="#">Air Pods</a>
+                <a href="#">Apple Watch</a>
+               
+            </header>
+
+        <form action="" method="POST"> 
+            <main>
+               
+                <div class="product">
+                    <h1>Каталог товаров</h1>
+                <ul>
+                    {% for product in products %}
+                    <li>
+                        <h2>{{ product.name }}</h2>
+                        <p>{{ product.description }}</p>
+                        <p>Цена: ${{ product.price }}</p>
+                        <p>{{product.ram}}</p>
+                        <p>{{product.diagonal}}</p>
+                        <img src="{{ product.image.url }}" alt="{{ product.name }}" width="200">
+                    </li>
+                        <p>{{product.category}}</p>
+                    </li>
+                    {% endfor %}
+                </ul>
+
+                </div>
+                
+                
+                
+        </form>
+    
+        
+    </body>
+    </html>
