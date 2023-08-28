@@ -19,15 +19,20 @@ from django.urls import path
 from main.views import *
 from product.views import *
 from order.views import *
+from django.conf.urls.static import static
+from django.conf import settings
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('register/',register),
     path('auth/',auth),
+    path('add_to_bucket/<int:product_id>/', add_to_bucket, name='add_to_bucket'),
    
     path('',home),
-    path('product/',product_page),
+    path('products/<int:product_id>/', product_page, name='product_detail'),
     path('create_order/',create_order),
     path('cart/',cart_page),
     path('catalog/',catalog_page),
 ]
+
+urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

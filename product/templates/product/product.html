@@ -8,62 +8,69 @@
     <link rel="stylesheet" href="{% static 'product/style_product.css' %}">
     <link href="https://fonts.googleapis.com/css2?family=B612+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
 </head>
-    {% block header_content %}
-        <h1>Lt.com</h1>
-    {% endblock header_content %}
+    
+        
+    
 <body>
-   
-    <form action="" method="POST">
-        <header>
+    <header>
+        <h1>Lt.com</h1>
+        <div>
+            
             <a href="#">Iphone</a>
             <a href="#">Mac</a>
             <a href="#">IPad</a>
             <a href="#">Air Pods</a>
-            <a href="#">Apple Watch</a>
-           
-        </header>
-
-    </form>
-    <form action="" method="POST">
-        <div class="main-container">
-            <h1>Name :{#}</h1>
-            <h1>Price :{#}</h1>
-            <div class="data-container">
-                <div class="first block">
-                    <p>128bg</p>
-                </div>
-                <div class="first block">
-                    <p>256gb</p>
-                </div>
-                <div class="first block">
-                    <p>512bg</p>
-                </div>
-                <div class="first block">
-                    <p>1T</p>
-                </div>
-            </div>
-            <div class="color-container">
-                <div class="color black">
-                </div>
-                <div class="color brown">
-                </div>
-                <div class="color pink">
-                </div>
-                <div class="color white">
-                </div>
-
-            </div>
-            <div class="button">
-                <a  class="btn" href="#">Додати до кошика</a>
-            </div>
-            
-            <div class="images">
-                <img  class="image" src='#' alt="Зображення">
-            </div>
-            
+            <a href="#">Apple Watch</a> 
         </div>
+    </header>
+    <main>
+        
+        <form action="" method="POST">
+            {% csrf_token %}
+            <div class="shop-content">
+                
+                <div class="product-box">                                            
+                    <img src="{{ product.image.url }}" alt="{{ product.name }}"  class="product-img">
+                    <!-- <h2 class="product-title">{{ product.name }}</h2>
+                    <span class="price">${{ product.price }}</span> -->
+                                            
+                </div>
+                <form action="" method="POST">                    
+                    <div class="info-box">
+                        
+                            <h1 class="title" name="name">{{product.name}}</h1>
+                            <span class="price-product" name="price">${{product.price}}</span>
+                            <p class="info-product">{{product.description}}</p>
+                            <span class="diagonal"> Phone diagonal is {{product.diagonal}} px</span>
+                            <span class="diagonal"> Phone ram is {{product.ram}}</span>
+                            <button name="btn-addcart" class="btn-add-cart" >Add to Cart</button>
+                        </form>
+                    </div>
+                </form>         
+                {{bucket}}   
+                {{user}}            
+                
+            </div>    
+            
+        </form>
+        
+        
+            
+                
+                    
+                                                  
+                               
+                     
+            
+        
+
+    </main>
+
+    
+   
+            
        
-    </form>
+    
    
         
     

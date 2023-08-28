@@ -24,7 +24,7 @@ def register(request):
         if password == confirm_password:
             if User.objects.filter(username=username).exists():
               
-              return redirect('/')
+              return redirect('/catalog/')
             else: 
                 user = User.objects.create(username=username, email=email,first_name = first_name,last_name=last_name,password=password)
                 user.set_password(password)
@@ -51,9 +51,9 @@ def auth(request):
 
         if user is not None:
             login(request, user)
-            return redirect('/')
+            return redirect('/catalog/')
         else:
-            
+            context['error'] = 'Invalid username or password'
             return render(request,'main/auth.html',context)
         
     else:

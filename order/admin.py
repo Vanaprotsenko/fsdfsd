@@ -1,3 +1,7 @@
 from django.contrib import admin
 
-# Register your models here.
+from .models import Bucket,ProductBucket
+
+admin.site.register(Bucket)
+admin.site.register(ProductBucket)
+

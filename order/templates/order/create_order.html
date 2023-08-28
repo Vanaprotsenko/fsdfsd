@@ -7,58 +7,45 @@
     <title>Document</title>
     <link rel="stylesheet" href="{% static 'order/style_create_order.css' %}">
     <link href="https://fonts.googleapis.com/css2?family=B612+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 </head>
-    {% block header_content %}
-        <h1>Lt.com</h1>
-    {% endblock header_content %}
+    
+        
+    
     
    
 
 <body>
-    <form action="" method="POST">
-        <header>
+    
+    <header>
+        <h1>Lt.com</h1>
+        <div class="nav container">
             <a href="#">Iphone</a>
             <a href="#">Mac</a>
             <a href="#">IPad</a>
             <a href="#">Air Pods</a>
             <a href="#">Apple Watch</a>
-           
-        </header>
+            <i class="bx bx-shopping-bag" id="cart-icon"></i>
+        </div>      
+    </header>
 
-    </form>
-    <form action="" method="POST" name="form_for_order">
-        <div class="main-container">
-            <h1>Order</h1>
-            <div class="info_product">
-                <div class="images">
-                    <img src="#" alt="" class="image">
-                </div>
-                <div class="name_order">
-                
-                    <h1>Name of product :{#}</h1>
-                    <h1>Count of products :{#}</h1>
-                
-                </div>
-            </div>
+    <main>
+        
+        
             
-            <div class=" i inputs">
-                <input type="email" name="email" class=" in minput">
-                <label for="email" class=" la input-group">Email address</label>
-            </div>
-            <div class=" i inputss">
-                <input type="inputmask" name="phone_number" class=" in minput">
-                <label for="phone_number" class=" la input-group">Phone number</label>
+            
+        
 
-            </div>
+        <script src="{% static 'order/total_order.js' %}"></script>
+
+    </main>
+
+    
+    
             
-            <div class="button">
-                <a  class="btn" href="#">Додати до кошика</a>
-            </div>
             
             
-            
-        </div>
        
-    </form>
+    
 </body>
 </html>

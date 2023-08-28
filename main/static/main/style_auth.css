@@ -8,15 +8,15 @@ a{
 
 
 header {
-    width: 697px;
+    width: calc(100% - 40px);
     display: flex;
     flex-direction: row;
     gap:40px;
     font-size: 24px;
-    position: relative;
-    top: -60px;
-    left: 803px;
-    align-items: flex-end;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #cbe3ec77;
+    justify-content: space-between;
    
 
 }
