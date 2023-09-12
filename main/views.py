@@ -8,8 +8,6 @@ from django.contrib import messages
 
 # Create your views here.
 
-def home(request):
-    return render(request, 'main/home.html')
 
 
 def register(request):

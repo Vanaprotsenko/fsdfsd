@@ -7,45 +7,50 @@ from order.models import Bucket, ProductBucket
 def product_page(request,product_id):
     context = {}
     product = get_object_or_404(Product, pk=product_id)
+    bject_count = Product.objects.count()
     context = {
-        'product': product
+        'product': product,
+        'count': bject_count
     }
    
     return render(request,'product/product.html',context)
+
+
 
 
 
 @login_required
 def add_to_bucket(request,product_id):
     context = {}
-    if request.method == 'POST':
-        user = request.user
-        
-        bucket = Bucket.objects.create(user=user)
-        context = {
-            'user': user,
-            'bucket': bucket
-        }
-
-        
-       
-    return render(request,'product/product.html',context)
+    user = request.user
     
+    bucket,  create = Bucket.objects.get_or_create(user=user)
+    product = Product.objects.get(pk = product_id)
+    ProductinBucket = ProductBucket.objects.create(count = 1,product = product, bucket = bucket)
    
+    return redirect(f'/products/{product_id}/',context)
 
-    
 
-        
 
-       
 
 
 
 
 def catalog_page(request):
     context = {}
+    bject_count = Product.objects.count()
+
     products = Product.objects.all()
+    
+    productbucket = ProductBucket.objects.all()
     context = {
-        'products': products
+        'products': products,
+        'productbucket': productbucket,
+        'count': bject_count
+        
     }
     return render(request,'product/catalog.html',context)
+
+
+
+

@@ -6,64 +6,81 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="{% static 'order/style_cart.css' %}">
-    <link href="https://fonts.googleapis.com/css2?family=B612+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700;800;900&family=Roboto+Condensed:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap" rel="stylesheet">
 </head>
-    {% block header_content %}
-        <h1>Lt.com</h1>
-    {% endblock header_content %}
-
-<header>
-    <!-- <form action="" method="POST">
-        <a href="#">Iphone</a>
-        <a href="#">Mac</a>
-        <a href="#">IPad</a>
-        <a href="#">Air Pods</a>
-        <a href="#">Apple Watch</a>
-    </form> -->
-</header>
-    
-   
 
 <body>
-    <form action="" method="POST">
-        <header>
+    <header>
+        <a  class="logo" href="/catalog/">Lt.com</a>
+        <div class="nav container">
             <a href="#">Iphone</a>
             <a href="#">Mac</a>
             <a href="#">IPad</a>
             <a href="#">Air Pods</a>
             <a href="#">Apple Watch</a>
-           
-        </header>
-
-    </form>
-    <form action="" method="POST" name="form_for_order">
-        <div class="main-container">
-            <h1>Cart</h1>
-            <div class="info_product">
-                <div class="images">
-                    <img src="#" alt="" class="image">
-                </div>
-                <div class="name_order">
-                
-                    <h1>Name of product :{#}</h1>
-                    <h1>Count of products :{#}</h1>
-                    <button class="btn">Delete product</button>
-                    
-                
-                </div>
-                
+            <div class="navi">
+                <a  class="logsign" href="/auth">Log in</a>
+                <a  class="logsign" href="/register">Sign in</a>
             </div>
-            
-            
-            
-            <div class="button">
-                <a  class="btn" href="#">Додати до кошика</a>
-            </div>
-            
-            
             
         </div>
+    </header>
+    
+    <div class="title">
+        <h2 class="title">Сompletion of the purchase</h2>
+    </div>
+    
+    <div class="shop-content">
+
+        <div class="info_order">
+            
+            <div class="info-box">
+                <p>Your order</p> 
+                {% for product_bucket in productbucket %}                                              
+                    <img src="{{ product.image.url }}" alt="{{ product.name }}"  class="product-img">
+                    Name: {{ product_bucket.product.name }}  
+                    Price :{{ product_bucket.product.price}}
+                    Count: {{ product_bucket.count }}
+                    <!-- User: {{ product_bucket.bucket.user }}                               -->
+                {% endfor %} 
+
+            </div>
+            
+            <form method="post" action="{% url 'cart' %}">
+                <div class="end-order">
+                    {% csrf_token %}
+                    <div class="con-order">
+                        <p class="data-order">Your date for order</p>
+                        <label for="email" class="lable">Your email *</label>
+                        <input type="email" name="email" placeholder="Enter email">
+
+                        <label for="full_name" class="lable">Your name *</label>
+                        <input type="text" name="full_name" placeholder="Enter full name">
+
+                        <label for="phone_number" class="lable">Your phone number *</label>
+                        <input type="number" name="phone_number" placeholder="Enter phone number">
+
+                    </div> 
+                <div class="all-order">                                          
+                    <h1>Together</h1>           
+                    <p class="total" >To pay <span>${{ total_price }}</span></p>
+                    <button class="btn-end" type="submit">End to order</button>                                                  
+                </div>    
+                
+                </div>
+                                 
+        
+
+            </form>   
+
+
+
+
+        </div> 
+        
+    
        
-    </form>
+    </div>
+    
 </body>
 </html>

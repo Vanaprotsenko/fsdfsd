@@ -1,6 +1,11 @@
 let cartIcon = document.querySelector('#cart-icon');
 let cart = document.querySelector('.cart');
 let closeCart = document.querySelector('#close-cart');
+let button = document.querySelector('.btn-buy');
+
+button.onclik = () =>{
+    cart.classList.add('')
+};
 
 
 cartIcon.onclick = () => {
@@ -18,10 +23,7 @@ if(document.readyState === 'load'){
 }else{
     ready();
 }
-document.getElementsByClassName("btn-buy").addEventListener("click", function() {
-    var centerBlock = document.getElementById("centerBlock");
-    centerBlock.classList.toggle("centered");
-});
+
 
 function ready(){
     var removeCartButtons = document.getElementsByClassName("cart-remove");
@@ -48,7 +50,7 @@ function ready(){
 
 
 function buyButtonClicked(){
-    alert("Your order is placed ");
+   
     var cartContent = document.getElementsByClassName("cart-content")[0];
     while (cartContent.hasChildNodes()){
         cartContent.removeChild(cartContent.firstChild);

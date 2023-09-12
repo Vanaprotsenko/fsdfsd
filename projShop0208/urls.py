@@ -27,12 +27,16 @@ urlpatterns = [
     path('register/',register),
     path('auth/',auth),
     path('add_to_bucket/<int:product_id>/', add_to_bucket, name='add_to_bucket'),
-   
-    path('',home),
+    # path('bucket/',see_bucket),
+
+    path('cart/', send_message_to_telegram, name='cart'),
+
+    path('',catalog_page),
     path('products/<int:product_id>/', product_page, name='product_detail'),
     path('create_order/',create_order),
-    path('cart/',cart_page),
+    # path('cart/',cart_page),
     path('catalog/',catalog_page),
+    
 ]
 
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

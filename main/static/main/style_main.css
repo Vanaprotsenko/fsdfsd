@@ -1,5 +1,6 @@
 *{
-    font-family: 'B612 Mono', monospace;
+    font-family: 'Cinzel', serif;
+    font-family: 'Roboto Condensed', sans-serif;
     margin: 0;
     padding: 0;
 }
@@ -8,6 +9,16 @@ a{
     color:black;
 }
 
+.logo{
+    font-size: 28px;
+    font-weight: 600;
+    color:#000;
+}
+
+input::placeholder {
+    padding-left: 15px; /* Отодвигаем плейсхолдер от левого края элемента */
+    
+  }
 
 header {
     width: calc(100% - 40px);
@@ -48,6 +59,16 @@ header div a:hover{
     
     
 }
+.inp{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.inp input{
+    border-radius: 15px;
+    height: 30px;
+    width: 400px;
+}
 .info_product{
     display: flex;
     flex-direction: row;
@@ -61,7 +82,7 @@ header div a:hover{
     align-items: center;
     flex-direction: column;
     gap:45px;
-    background-color: rgba(179, 178, 255, 1);
+    background-color: rgb(192, 193, 204);
     height: auto;
     justify-content: center;
     padding:20px;
@@ -95,46 +116,18 @@ header div a:hover{
     font-size: 28px;
 }
 
-.i{
-    position: relative;
-    width: 100%;
-    display: flex;
-    justify-content: center;
+.inputs input{
+    
+    width: 195px;
+    height: 30px;
+    border-radius: 10px;
 }
-.in{
-    font:inherit;
-    color:#fff;
-    padding: 10px;
-    border: none;
-    border-radius: 4px;
-    outline: 2px solid #fff;
-    background-color: transparent;
-    transition: outline-color 500ms;
-    width: 60%;
+.sect{
+    display: grid;
+}
 
-}
-.in:is(:focus, :valid){
-    outline-color: #3c50eb;
-}
-.la{
-    position: absolute;
-    top:0px;
-    left:20%;
-    translate: 10px 10px;
-    color:#fff;
-    transition: translate 500ms,
-    scale 500ms;
-    width: 200px;
-}
-.in:focus +
-.la,
-.in:valid +
-.la{
-    padding: inline 5px;
-    translate: 10px -14px;
-    scale:0.8;
-    background-color: #000;
-}
+
+
 
 
 main{

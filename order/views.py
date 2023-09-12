@@ -1,6 +1,9 @@
 from django.shortcuts import render,get_object_or_404
-
+from django.contrib.auth.decorators import login_required
+from order.models import Bucket , ProductBucket
+from django.http import JsonResponse
 from .models import Product
+import requests
 
 # Create your views here.
 def create_order(request):
@@ -13,5 +16,66 @@ def create_order(request):
     return render(request, 'order/create_order.html',context)
 
 
-def cart_page(request):
-    return render(request,'order/cart.html')
+# На сколько это эфективно совмещать так функции ?
+
+@login_required
+def send_message_to_telegram(request):
+    context = {}
+    user = request.user
+    
+
+    productbucket = ProductBucket.objects.all()
+
+    bucket = Bucket.objects.filter(user_id = user).first()
+    
+    if bucket:
+        product_buckets = ProductBucket.objects.filter(bucket=bucket)
+
+        data_all = []
+        total_price = sum(product_bucket.product.price * product_bucket.count for product_bucket in product_buckets)    
+        for named in product_buckets:
+           total_data = named.product.name + "\n" + str(named.product.price) + "\n" + str(named.count)
+           data_all.append(total_data)
+           all_data_str = "\n".join(data_all)
+           
+            
+    else:
+        total_price = 0   
+
+    context = {
+        'productbucket': productbucket,
+        'total_price': total_price,    
+        'all_data_str': all_data_str ,
+        'data_all': data_all   
+    }
+    
+
+
+
+    
+    if request.method == 'POST':
+        
+        email = request.POST.get('email', '')
+        full_name = request.POST.get('full_name', '')
+        phone_number = request.POST.get('phone_number', '')
+        full_info = "Email user" + " : " + email + "\n" + "Name" + " : " + full_name + "\n" + " Phone number" + " : " + phone_number +"\n" + all_data_str
+        
+        bot_token = '6610207148:AAGIhjLC9Jx0w-j6JzT8u__mxlnjvfOLw2k'
+        chat_id = '5334960289'
+
+        telegram_api_url = f'https://api.telegram.org/bot{bot_token}/sendMessage'
+        data = {
+            'chat_id': chat_id,
+            'text': full_info,
+            
+
+        }
+
+        response = requests.post(telegram_api_url, data=data)
+        # if response.status_code == 200:
+        #     context['200'] = 'Success'
+        # # добавить сюда контекст
+        # else:
+        #     context['404'] = 'Something went wrong'
+
+    return render(request, 'order/cart.html',context)

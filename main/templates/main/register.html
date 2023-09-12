@@ -5,18 +5,26 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="{% static 'main/style_register.css' %}">
-    <link href="https://fonts.googleapis.com/css2?family=B612+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'main/style_main.css' %}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700;800;900&family=Roboto+Condensed:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap" rel="stylesheet">
 </head>
-    {% block header_content %}
-        
-    {% endblock header_content %}
-    
+<style>
+    body {
+        background-image: url("{% get_media_prefix %}products/bg.jpg");
+        background-size: cover; 
+        background-repeat: no-repeat; 
+        background-position: center center; 
+        color: #ffffff;
+        padding: 20px;  
+    }
+</style>    
    
 
 <body>
     <header>
-        <h1>Lt.com</h1>
+        <a  class="logo" href="/catalog/">Lt.com</a>
         <div>
             <a href="#">Iphone</a>
             <a href="#">Mac</a>
@@ -42,34 +50,26 @@
                 
                 
                 {{error}}
-                <div class=" i inputs">
-                    <input type="text" name="first_name" class=" in minput">
-                    <label for="first_name" class=" la input-group">First name</label>
-                </div>
-                <div class=" i inputs">
-                    <input type="text" name="last_name" class=" in minput">
-                    <label for="last_name" class=" la input-group">Last name</label>
-                </div>
-                <div class=" i inputs">
-                    <input type="email" name="email" class=" in minput">
-                    <label for="email" class=" la input-group">Email address</label>
-                </div>
-                <div class=" i inputs">
-                <input type="text" name="username" class=" in minput">
-                <label for="username" class=" la input-group">Username</label>
-                </div>
-                <div class=" i inputs">
-                <input type="number" name="password" class=" in minput">
-                <label for="password" class=" la input-group">Password</label>
-                </div>
-                <div class=" i inputs">
-                <input type="number" name="confirm_password" class=" in minput">
-                <label for="confirm_password" class=" la input-group">Confirm password</label>
-                </div>
+                <section class="sect">
+                    <div class="inp">
+                        <input type="text" name="first_name" placeholder="Enter first name">
+                                
+                        <input type="text" name="last_name" placeholder="Enter last name">                
+                        <input type="email" name="email" placeholder="Enter email">                    
+                        <input type="text" name="username" placeholder="Enter username ">        
+                        <input type="number" name="password" placeholder="Enter password">                   
+                        <input type="number" name="confirm_password" placeholder="Enter confirm password">
+                        
+                    </div>
+                </section>
                 
                 <div class="button">
                     <button  class="btn" >Register</button>
                 </div>
+                
+
+
+
                 
                 
                 
