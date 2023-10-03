@@ -21,7 +21,7 @@
     
 <body>
     <header>
-        <a  class="logo" href="/catalog/">Lt.com</a>
+        <a  class="logo" href="/">Lt.com</a>
         <div class="nav container">
             
             <a href="#">Iphone</a>
@@ -34,8 +34,8 @@
                 <span class="item-count">{{count}}</span> 
             </div>
             <div class="navi">
-                <a  class="logsign" href="/auth">Log in</a>
-                <a  class="logsign" href="/register">Sign in</a>
+                <a  class="logsign" href="/register">Log in</a>
+                <a  class="logsign" href="/auth">Sign in</a>
             </div>
         </div>
     </header>
@@ -47,7 +47,7 @@
             {% csrf_token %}                  
             <div class="shop-content">               
                <div class="product-box">                                            
-                    <img src="{{ product.image.url }}" alt="{{ product.name }}"  class="product-img">
+                    <li><img src="{{ product.image.url }}" alt="{{ product.name }}"  class="product-img"></li>
                     <!-- <h2 class="product-title">{{ product.name }}</h2>
                     <span class="price">${{ product.price }}</span> -->
                                             

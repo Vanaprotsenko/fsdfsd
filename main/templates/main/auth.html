@@ -15,13 +15,15 @@
         background-repeat: no-repeat; 
         background-position: center center; 
         color: #ffffff;
-        padding: 20px;  
+        padding: 20px; 
+        height: 100vh; 
+    
     }
 </style>    
 
 <body>
     <header>
-        <a class="logo" href="/catalog/">Lt.com</a>
+        <a class="logo" href="/">Lt.com</a>
         <div>
             <a href="#">Iphone</a>
             <a href="#">Mac</a>
@@ -42,20 +44,21 @@
                 
                     <a href="/register"> Log in </a>
                     <a href="/auth"> Sign in </a>
-                {{error}}
+                    
                 </div>
+                
             </div>
-            
+            {{error}}
             
             
             
             <div class="inputs">
                 <input type="text" name="username" placeholder="Enter username">
-                <input type="number" name="password" placeholder="Enter password">
+                <input type="password" name="password" placeholder="Enter password">
             </div>
 
             <div class="button">
-                <button  class="btn" >Register</button>
+                <button  class="btn" >Sign in</button>
             </div>
             
             

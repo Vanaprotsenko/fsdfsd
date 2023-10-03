@@ -11,7 +11,7 @@
 
 <body>
     <header>
-        <a  class="logo" href="/catalog/">Lt.com</a>
+        <a  class="logo" href="/">Lt.com</a>
         <div class="nav container">
             <a href="#">Iphone</a>
             <a href="#">Mac</a>
@@ -19,8 +19,8 @@
             <a href="#">Air Pods</a>
             <a href="#">Apple Watch</a>
             <div class="navi">
-                <a  class="logsign" href="/auth">Log in</a>
-                <a  class="logsign" href="/register">Sign in</a>
+                <a  class="logsign" href="/register">Log in</a>
+                <a  class="logsign" href="/auth">Sign in</a>
             </div>
             
         </div>
@@ -29,23 +29,36 @@
     <div class="title">
         <h2 class="title">Сompletion of the purchase</h2>
     </div>
+    <div class="mes">
+        <h1 class="message" >{{ message }}</h1>
+    </div>
     
     <div class="shop-content">
+        
 
         <div class="info_order">
             
             <div class="info-box">
-                <p>Your order</p> 
-                {% for product_bucket in productbucket %}                                              
-                    <img src="{{ product.image.url }}" alt="{{ product.name }}"  class="product-img">
-                    Name: {{ product_bucket.product.name }}  
-                    Price :{{ product_bucket.product.price}}
-                    Count: {{ product_bucket.count }}
-                    <!-- User: {{ product_bucket.bucket.user }}                               -->
-                {% endfor %} 
+                <p>Your order</p>  
+                {% if product_buckets %}              
+                    {% for product_bucket in product_buckets %}                                              
+                        <img src="{{ product.image.url }}" alt="{{ product.name }}"  class="product-img">
+                        Name: {{ product_bucket.product.name }}  
+                        Price :{{ product_bucket.product.price}}
+                        Count: {{ product_bucket.count }}
+                        User : {{product_bucket.bucket.user}}
+                        
+                    {% endfor %} 
+                {% else %}
+                    <p>No items in the cart {{total_price}}</p>
+                {% endif %}
 
             </div>
+
+
             
+    
+           
             <form method="post" action="{% url 'cart' %}">
                 <div class="end-order">
                     {% csrf_token %}
@@ -58,7 +71,7 @@
                         <input type="text" name="full_name" placeholder="Enter full name">
 
                         <label for="phone_number" class="lable">Your phone number *</label>
-                        <input type="number" name="phone_number" placeholder="Enter phone number">
+                        <input type="text" id="phone" name="phone_number" placeholder="Enter phone number">
 
                     </div> 
                 <div class="all-order">                                          
@@ -68,18 +81,19 @@
                 </div>    
                 
                 </div>
+                <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+                <script>
+                    $(document).ready(function () {
+                      $('#phone').inputmask('+380 (99) 999-99-99'); 
+                    });
+
+
+                </script>
                                  
         
 
             </form>   
-
-
-
-
-        </div> 
-        
-    
-       
+        </div>        
     </div>
     
 </body>

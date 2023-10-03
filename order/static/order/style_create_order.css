@@ -95,6 +95,39 @@ header div a:hover{
 .cart.active{
     right: 0;
 }
+
+
+.product-card {
+    position: relative;
+    display: inline-block;
+    margin: 20px;
+    text-align: center;
+    transition: height 0.3s ease;
+    overflow: hidden;
+}
+
+.product-card:hover {
+    height: 250px; /* Измените высоту по вашему усмотрению */
+}
+
+.buy-button {
+    display: none;
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+}
+
+.product-card:hover .buy-button {
+    display: block;
+}
+
+
 .cart-title{
     text-align: center;
     font-size: 1.5rem;

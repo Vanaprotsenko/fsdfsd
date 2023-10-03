@@ -19,16 +19,16 @@ def register(request):
         email = request.POST.get('email')
         password = request.POST.get('password')
         confirm_password = request.POST.get('confirm_password')
-        if password == confirm_password:
+        if password == confirm_password and email != None:
             if User.objects.filter(username=username).exists():
               
-              return redirect('/catalog/')
+              return redirect('/')
             else: 
                 user = User.objects.create(username=username, email=email,first_name = first_name,last_name=last_name,password=password)
                 user.set_password(password)
                 user.save()
                 
-                return redirect('/')
+                return redirect('/auth')
     else:
     
      return render(request, 'main/register.html')
@@ -49,7 +49,7 @@ def auth(request):
 
         if user is not None:
             login(request, user)
-            return redirect('/catalog/')
+            return redirect('/')
         else:
             context['error'] = 'Invalid username or password'
             return render(request,'main/auth.html',context)

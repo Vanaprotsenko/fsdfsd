@@ -32,6 +32,18 @@ header div a:hover{
         border-bottom:  4px solid #4e64ac77;
         box-sizing: content-box;
 }
+.mes{
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+h1.message {
+    font-size: 32px;
+    
+    width: 510px;
+    padding: 10px 10px;
+    border-radius: 0px 0px 10px 0;
+}
 .nav {
     display: flex;
     align-items: center;

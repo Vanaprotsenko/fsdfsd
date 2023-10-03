@@ -9,17 +9,12 @@ a{
     color:black;
 }
 
+
 .logo{
     font-size: 28px;
     font-weight: 600;
     color:#000;
 }
-
-input::placeholder {
-    padding-left: 15px; /* Отодвигаем плейсхолдер от левого края элемента */
-    
-  }
-
 header {
     width: calc(100% - 40px);
     display: flex;
@@ -63,11 +58,25 @@ header div a:hover{
     display: flex;
     flex-direction: column;
     gap: 10px;
+    
 }
 .inp input{
     border-radius: 15px;
     height: 30px;
     width: 400px;
+}
+
+input[type="text"] {
+    padding-left: 15px;
+}
+input[type="number"]  {
+    padding-left: 15px;
+}
+input[type="email"] {
+    padding-left: 15px;
+}
+input[type="password"] {
+    padding-left: 15px;
 }
 .info_product{
     display: flex;
